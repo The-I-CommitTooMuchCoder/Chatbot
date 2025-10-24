@@ -1,0 +1,256 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #242424;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 800px;
+    height: 90vh;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+header {
+    background: #1a1a1a;
+    color: white;
+    padding: 25px;
+    text-align: center;
+}
+
+header img{
+    max-height: 5rem;
+    max-width: 5rem;
+    border-radius: 100%;
+}
+
+header hr{
+    width: 10%;
+    height: 3px;
+    margin: 2px auto;
+    border: none;
+    border-radius: 350%;
+    background: linear-gradient(90deg, #bd995d 20%, #9a7f54 100%);
+    opacity: 0.9;
+}
+
+header p {
+    font-size: 28px;
+    font-family: 'Times New Roman', Times, serif;
+    background: linear-gradient(180deg,#bd995d 0%, #9a7f54 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    opacity: 0.9;
+    
+}
+
+.chat-container {
+    flex: 1;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.messages {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    background: #1a1a1a;
+}
+
+.messages::-webkit-scrollbar {
+    width: 8px;
+}
+
+.messages::-webkit-scrollbar-track {
+    background: #1a1a1a;
+}
+
+.messages::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+}
+
+.messages::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+.user-message,
+.bot-message {
+    padding: 12px 18px;
+    border-radius: 15px;
+    max-width: 70%;
+    word-wrap: break-word;
+    line-height: 1.5;
+}
+
+.user-message {
+    background: #741f2b;
+    color: white;
+    align-self: flex-end;
+    margin-left: auto;
+}
+
+.bot-message {
+    background: black;
+    color: white;
+    align-self: flex-start;
+}
+
+.bot-message h1,
+.bot-message h2,
+.bot-message h3 {
+    margin-top: 12px;
+    margin-bottom: 8px;
+    color: whitesmoke;
+}
+
+.bot-message h1 {
+    font-size: 20px;
+}
+
+.bot-message h2 {
+    font-size: 18px;
+}
+
+.bot-message h3 {
+    font-size: 16px;
+}
+
+.bot-message ul,
+.bot-message ol {
+    margin-left: 20px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+.bot-message li {
+    margin-bottom: 4px;
+}
+
+.bot-message p {
+    margin-bottom: 8px;
+}
+
+.loading-message {
+    padding: 20px 18px;
+}
+
+.loading-dots {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+}
+
+.loading-dots span {
+    width: 8px;
+    height: 8px;
+    background: #5f6161;
+    border-radius: 50%;
+    animation: bounce 1.4s infinite ease-in-out;
+}
+
+.loading-dots span:nth-child(1) {
+    animation-delay: -0.32s;
+}
+
+.loading-dots span:nth-child(2) {
+    animation-delay: -0.16s;
+}
+
+@keyframes bounce {
+    0%, 80%, 100% {
+        transform: scale(0.8);
+        opacity: 0.5;
+    }
+    40% {
+        transform: scale(1.2);
+        opacity: 1;
+    }
+}
+
+.input-container {
+    padding: 20px;
+    background: black;
+    border-top: 2px solid #4e4e4e;
+    display: flex;
+    gap: 10px;
+}
+
+.input-field {
+    flex: 1;
+    padding: 12px 18px;
+    border: 4px solid; 
+    border-color: #5e4919;
+    border-radius:18px;
+    font-size: 15px;
+    outline: none;
+    transition: border 0.3s;
+}
+
+.input-field:focus {
+    border: 4px solid; 
+    border-color: #bd995d;
+}
+
+.send-button {
+    padding: 12px 30px;
+    background: linear-gradient(135deg, #bd995d 0%, #7a612a 100%);
+    color: white;
+    border: none;
+    stroke: white;
+    border-radius: 25px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.send-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 5px rgb(207, 185, 56);
+}
+
+.send-button:active {
+    transform: translateY(0);
+}
+
+.send-button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+@media (max-width: 768px) {
+    .container {
+        height: 100vh;
+        border-radius: 0;
+    }
+
+    header h1 {
+        font-size: 24px;
+    }
+
+    .user-message,
+    .bot-message {
+        max-width: 85%;
+    }
+}
