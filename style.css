@@ -6,7 +6,7 @@
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: #242424;
+    background: #c7a29e;
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -18,7 +18,7 @@ body {
     width: 100%;
     max-width: 800px;
     height: 90vh;
-    background: white;
+    background: #f88379;
     border-radius: 20px;
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
     display: flex;
@@ -27,38 +27,26 @@ body {
 }
 
 header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background: #1a1a1a;
     color: white;
-    padding: 25px;
+    background: #f88379;
+    padding: 20px;
+    gap: 10px;
     text-align: center;
 }
 
 header img{
-    max-height: 5rem;
-    max-width: 5rem;
-    border-radius: 100%;
+    max-height: 4rem;
+    max-width: auto;
 }
 
-header hr{
-    width: 10%;
-    height: 3px;
-    margin: 2px auto;
-    border: none;
-    border-radius: 350%;
-    background: linear-gradient(90deg, #bd995d 20%, #9a7f54 100%);
-    opacity: 0.9;
+header h2{
+    font-size: 25px;
+    font-weight: 400;
 }
-
-header p {
-    font-size: 28px;
-    font-family: 'Times New Roman', Times, serif;
-    background: linear-gradient(180deg,#bd995d 0%, #9a7f54 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    opacity: 0.9;
-    
-}
-
 .chat-container {
     flex: 1;
     overflow: hidden;
@@ -73,7 +61,7 @@ header p {
     display: flex;
     flex-direction: column;
     gap: 15px;
-    background: #1a1a1a;
+    background: #f1c0bb;
 }
 
 .messages::-webkit-scrollbar {
@@ -103,14 +91,14 @@ header p {
 }
 
 .user-message {
-    background: #741f2b;
-    color: white;
+    background: #fffae7;
+    color: black;
     align-self: flex-end;
     margin-left: auto;
 }
 
 .bot-message {
-    background: black;
+    background: #f88379;
     color: white;
     align-self: flex-start;
 }
@@ -120,7 +108,7 @@ header p {
 .bot-message h3 {
     margin-top: 12px;
     margin-bottom: 8px;
-    color: whitesmoke;
+    color: #f88379;
 }
 
 .bot-message h1 {
@@ -189,8 +177,8 @@ header p {
 
 .input-container {
     padding: 20px;
-    background: black;
-    border-top: 2px solid #4e4e4e;
+    background: #f88379;
+    border-top: 2px solid #f09878;
     display: flex;
     gap: 10px;
 }
@@ -198,8 +186,8 @@ header p {
 .input-field {
     flex: 1;
     padding: 12px 18px;
-    border: 4px solid; 
-    border-color: #5e4919;
+    border: 2px solid; 
+    border-color: #e4c9c0;
     border-radius:18px;
     font-size: 15px;
     outline: none;
@@ -207,13 +195,15 @@ header p {
 }
 
 .input-field:focus {
-    border: 4px solid; 
-    border-color: #bd995d;
+    border: 2px solid; 
+    border-color: #f88379;
 }
 
 .send-button {
-    padding: 12px 30px;
-    background: linear-gradient(135deg, #bd995d 0%, #7a612a 100%);
+    max-width: 3rem;
+    max-height: 4rem;
+    padding: 1px 7px;
+    background-color: #fffae7;
     color: white;
     border: none;
     stroke: white;
@@ -224,9 +214,18 @@ header p {
     transition: transform 0.2s, box-shadow 0.2s;
 }
 
+.send-button img {
+    width: 24px;
+    height: 18px;
+    transition: transform 0.4s ease;
+}
+
+.send-button:hover img {
+    transform: scale(1.1);
+}
 .send-button:hover {
     transform: translateY(-2px);
-    box-shadow: 0 2px 5px rgb(207, 185, 56);
+    box-shadow: 0 2px 5px #c7a29e;
 }
 
 .send-button:active {
